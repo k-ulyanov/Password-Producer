@@ -3,7 +3,7 @@ from random import choice
 from os import path, getlogin, mkdir
 
 # Available modes
-availavle = ['s', 'm', 'w']
+availavle = ('s', 'm', 'w')
 
 while True:
     if not path.exists(f'C:\\Users\\{getlogin()}\\Documents\\Generation'):
