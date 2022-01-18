@@ -3,7 +3,7 @@ from random import choice
 from os import path, getlogin, mkdir
 
 # Available modes
-availavle = ('s', 'm', 'w')
+availavle = 's', 'm', 'w'
 
 while True:
     if not path.exists(f'C:\\Users\\{getlogin()}\\Documents\\Generation'):
@@ -24,7 +24,7 @@ while True:
 
     # Inputs
     strength = input("What is your password strength? Choose 'Strong', 'Medium' or 'Weak' ").lower()
-    while strength not in availavle:
+    while strength[0] not in availavle:
         strength = input("You can only use 'Strong', 'Medium' or 'Weak' ").lower()
     length_error = True
     while length_error:
