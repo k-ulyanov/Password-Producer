@@ -2,24 +2,35 @@ from string import ascii_letters, digits
 from random import choice
 from os import path, getlogin, mkdir
 
+# Save toggle
+save = input('Do you want to save your password to Documents? (Y/N) ').lower()
+while save[0] != 'y' and save[0] != 'n':
+    save = input("You can only use 'Y' or 'N' ")
+if save[0] == 'y':
+    save = True
+else:
+    save = False
+
 # Available modes
 availavle = 's', 'm', 'w'
 
 while True:
-    if not path.exists(f'C:\\Users\\{getlogin()}\\Documents\\Generation'):
-        mkdir(f'C:\\Users\\{getlogin()}\\Documents\\Generation')
+    if save == True:
+        if not path.exists(f'C:\\Users\\{getlogin()}\\Documents\\Generation'):
+            mkdir(f'C:\\Users\\{getlogin()}\\Documents\\Generation')
 
     # Preparing
     password = ''
 
     # Log
-    log_type = input("Type 'Over' to overwrite your saved password in a file; Type 'Append' to append your saved passwords into the file ").lower()
-    while log_type[0] != 'a' and log_type[0] != 'o' and log_type != 'w':
-        log_type = input("You can only use 'Over' or 'Append' ").lower()
-    if log_type[0] == 'o' or log_type == 'w':
-        log_mode = 'w'
-    else:
-        log_mode = 'a+'
+    if save == True:
+        log_type = input("Type 'Over' to overwrite your saved password in a file; type 'Append' to append your saved passwords into the file ").lower()
+        while log_type[0] != 'a' and log_type[0] != 'o' and log_type != 'w':
+            log_type = input("You can only use 'Over' or 'Append' ").lower()
+        if log_type[0] == 'o' or log_type == 'w':
+            log_mode = 'w'
+        else:
+            log_mode = 'a+'
 
 
     # Inputs
@@ -39,15 +50,24 @@ while True:
     if strength[0] == 's':
         for _ in range(length):
             password += choice(digits + ascii_letters)
-        with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\strong.txt', log_mode) as slist_file:
-            slist_file.write(f'{password}\n')
+        if save == True:
+            with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\strong.txt', log_mode) as slist_file:
+                slist_file.write(f'{password}\n')
+        else:
+            print(password)
     elif strength[0] == 'm':
         for _ in range(length):
             password += choice(ascii_letters)
-        with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\medium.txt', log_mode) as mlist_file:
-            mlist_file.write(f'{password}\n')
+        if save == True:
+            with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\medium.txt', log_mode) as mlist_file:
+                mlist_file.write(f'{password}\n')
+        else:
+            print(password)
     else:
         for _ in range(length):
             password += choice(digits)
-        with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\weak.txt', log_mode) as wlist_file:
-            wlist_file.write(f'{password}\n')
+        if save == True:
+            with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\weak.txt', log_mode) as wlist_file:
+                wlist_file.write(f'{password}\n')
+        else:
+            print(password)
