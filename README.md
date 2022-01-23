@@ -1,7 +1,8 @@
-![Top](https://user-images.githubusercontent.com/95244851/150693766-4f32f954-3937-472c-b058-ff0301154d2d.png)
+![Top](https://user-images.githubusercontent.com/95244851/150694640-434196df-2db3-4252-8764-12eb986a24e0.png)
 
 # About
-[Download Password Producer here](https://github.com/k-ulyanov/PasswordProducer/releases/tag/Release)
+
+[Download here](https://github.com/k-ulyanov/PasswordProducer/releases/tag/Release)
 
 [Source code here](https://github.com/k-ulyanov/PasswordProducer/blob/main/Password%20Producer.py)
 
