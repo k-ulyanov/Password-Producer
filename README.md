@@ -7,7 +7,7 @@
 [Source code here](https://github.com/k-ulyanov/PasswordProducer/blob/main/Password%20Producer.py)
 
 `Do you want to save your password to Documents? (Y/N)`.\
-Type 'Y' if you want the program to save passwords to Documents; Type 'N' if you do not want the program to save passwords to Documents.
+Type 'Y' if you want the program to save passwords to Documents; Type 'N' if you do not want the program to save passwords to *Documents\Generation*.
 
 #
 
@@ -24,5 +24,5 @@ Choose 'Strong' to get a strong password; choose 'medium' to get a medium passwo
 `How many characters do you want your password to contain?`\
 Choose the amount of characters in your password.
 
-*If you decided to save your password to Documents, you will see it in a text file in Documents.*\
+*If you decided to save your password to Documents, you will see it in a text file in Documents\Generation.*\
 *If you decided not to save your password to Documents, you will see it printed in your terminal.*
