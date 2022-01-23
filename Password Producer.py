@@ -3,7 +3,7 @@ from random import choice
 from os import path, getlogin, mkdir
 
 # Save toggle
-save = input('Do you want to save your password to Documents? (Y/N) ').lower()
+save = input('Do you want to save your password to Documents\Generation in a text file? (Y/N) ').lower()
 while save[0] != 'y' and save[0] != 'n':
     save = input("You can only use 'Y' or 'N' ")
 if save[0] == 'y':
