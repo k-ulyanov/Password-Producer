@@ -7,7 +7,7 @@
 [Source code here](https://github.com/k-ulyanov/PasswordProducer/blob/main/Password%20Producer.py)
 
 `Do you want to save your password to Documents? (Y/N)`\
-Type 'Y' if you want the program to save passwords to Documents; Type 'N' if you do not want the program to save passwords to *Documents\Generation*.
+Type 'Y' if you want the program to save passwords to Documents; type 'N' if you do not want the program to save passwords to *Documents\Generation*.
 
 #
 
