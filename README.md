@@ -48,5 +48,5 @@ Type 'Y' if you want your password to lowercase letters; type 'N' if you do not 
 Type 'Y' if you want your password to uppercase letters; type 'N' if you do not want your password to contain uppercase letters
 
 ## Error messages
-*`You have nothing to get a random password from! Try again.`*
+*`You have nothing to get a random password from! Try again.`*\
 You said 'N' to all the inputs if you get this error.
