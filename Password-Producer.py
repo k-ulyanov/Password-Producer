@@ -11,8 +11,9 @@ if save[0] == 'y':
 else:
     save = False
 
-# Available modes
+# Available
 availavle = 's', 'm', 'w'
+punctuation_available = '@-_!'
 
 while True:
     if save == True:
@@ -49,7 +50,7 @@ while True:
     # Generating
     if strength[0] == 's':
         for _ in range(length):
-            password += choice(digits + ascii_letters)
+            password += choice(ascii_letters + digits + punctuation_available)
         if save == True:
             with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\strong.txt', log_mode) as slist_file:
                 slist_file.write(f'{password}\n')
@@ -57,7 +58,7 @@ while True:
             print(password)
     elif strength[0] == 'm':
         for _ in range(length):
-            password += choice(ascii_letters)
+            password += choice(ascii_letters + digits)
         if save == True:
             with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\medium.txt', log_mode) as mlist_file:
                 mlist_file.write(f'{password}\n')
@@ -65,7 +66,7 @@ while True:
             print(password)
     else:
         for _ in range(length):
-            password += choice(digits)
+            password += choice(ascii_letters)
         if save == True:
             with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\weak.txt', log_mode) as wlist_file:
                 wlist_file.write(f'{password}\n')
