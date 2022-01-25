@@ -55,7 +55,7 @@ while True:
         uppers = ''
     
     if digitsp == '' and lowers == '' and uppers == '':
-        print('You have nothing to get a random password from! Try again')
+        print('We have nothing to make a random password from! Try again.')
         sleep(1)
         continue
 
