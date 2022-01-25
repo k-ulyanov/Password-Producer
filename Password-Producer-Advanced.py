@@ -33,13 +33,13 @@ while True:
 
     # Password resource
     digitsp = input('Do you want your password to contain digits? (Y/N) ').lower()
-    while digitsp not in yn:
+    while digitsp[0] not in yn:
         digitsp = input('Do you want your password to contain digits? (Y/N) ').lower()
     lowers = input('Do you want your password to contain lowercase letters? (Y/N) ').lower()
-    while lowers not in yn:
+    while lowers[0] not in yn:
         lowers = input('Do you want your password to contain digits? (Y/N) ').lower()
     uppers = input('Do you want your password to contain uppercase letters? (Y/N) ').lower()
-    while uppers not in yn:
+    while uppers[0] not in yn:
         uppers = input('Do you want your password to contain digits? (Y/N) ').lower()
     if digitsp[0] == 'y':
         digitsp = digits
@@ -72,7 +72,7 @@ while True:
     for _ in range(length):
         password += choice(digitsp + uppers + lowers)
     if save == True:
-        with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\strong.txt', log_mode) as slist_file:
+        with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\passwords.txt', log_mode) as slist_file:
             slist_file.write(f'{password}\n')
     else:
         print(password)
