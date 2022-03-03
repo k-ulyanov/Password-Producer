@@ -13,16 +13,15 @@ else:
     save = False
 
 while True:
-    if save == True:
+    if save:
         if not path.exists(f'C:\\Users\\{getlogin()}\\Documents\\Generation'):
             mkdir(f'C:\\Users\\{getlogin()}\\Documents\\Generation')
 
     # Preparing
     password = ''
-    yn = 'y', 'n'
 
     # Log
-    if save == True:
+    if save:
         log_type = input("Type 'Over' to overwrite your saved password in a file; type 'Append' to append your saved passwords into the file ").lower()
         while log_type[0] != 'a' and log_type[0] != 'o' and log_type != 'w':
             log_type = input("You can only use 'Over' or 'Append' ").lower()
@@ -53,7 +52,7 @@ while True:
         uppers = ascii_uppercase
     else:
         uppers = ''
-    
+
     if digitsp == '' and lowers == '' and uppers == '':
         print('We have nothing to make a random password from! Try again.')
         sleep(1)
@@ -71,7 +70,7 @@ while True:
     # Generating
     for _ in range(length):
         password += choice(digitsp + uppers + lowers)
-    if save == True:
+    if save:
         with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\passwords.txt', log_mode) as slist_file:
             slist_file.write(f'{password}\n')
     else:
