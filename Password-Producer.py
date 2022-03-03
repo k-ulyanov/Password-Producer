@@ -11,12 +11,8 @@ if save[0] == 'y':
 else:
     save = False
 
-# Available
-availavle = 's', 'm', 'w'
-punctuation_available = '@-_!'
-
 while True:
-    if save == True:
+    if save:
         if not path.exists(f'C:\\Users\\{getlogin()}\\Documents\\Generation'):
             mkdir(f'C:\\Users\\{getlogin()}\\Documents\\Generation')
 
@@ -24,7 +20,7 @@ while True:
     password = ''
 
     # Log
-    if save == True:
+    if save:
         log_type = input("Type 'Over' to overwrite your saved password in a file; type 'Append' to append your saved passwords into the file ").lower()
         while log_type[0] != 'a' and log_type[0] != 'o' and log_type != 'w':
             log_type = input("You can only use 'Over' or 'Append' ").lower()
@@ -36,7 +32,7 @@ while True:
 
     # Inputs
     strength = input("What is your password strength? Choose 'Strong', 'Medium' or 'Weak' ").lower()
-    while strength[0] not in availavle:
+    while strength[0] not in ('s', 'm', 'w'):
         strength = input("You can only use 'Strong', 'Medium' or 'Weak' ").lower()
     length_error = True
     while length_error:
@@ -45,12 +41,12 @@ while True:
             length_error = False
         except:
             pass
-                
+
 
     # Generating
     if strength[0] == 's':
         for _ in range(length):
-            password += choice(ascii_letters + digits + punctuation_available)
+            password += choice(ascii_letters + digits + '@-_!')
         if save == True:
             with open(f'C:\\Users\\{getlogin()}\\Documents\\Generation\\strong.txt', log_mode) as slist_file:
                 slist_file.write(f'{password}\n')
